@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Starting EPass</title>
+        <link href="Pages EPass/bootstrap.min.css" rel="stylesheet"/>
+        <link href="Pages EPass/bootstrap-theme.css" rel="stylesheet"/>
+        <style>
+      html
+      {
+        background-image: url('https://up.20script.ir/file/4e4e-a.jpg');no-repeat center fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        width: 100%;
+	    	height: 100%;
+      }
+      body
+      {
+        margin: 0px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(255, 255, 255);
+      }
+      .left, .right {
+        float: left;
+        width: 20%; /* The width is 20%, by default */
+      }
+
+      .main {
+        float: left;
+        width: 60%; /* The width is 60%, by default */
+      }
+
+      /* Use a media query to add a breakpoint at 800px: */
+      @media screen and (max-width: 800px) {
+        .left, .main, .right {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+      #head
+      {
+        padding: 0px 0px 0px 50px;
+        color: rgba(255, 255, 255, 0.973);
+        margin: 20px;
+      }
+      h1 div ul 
+      { 
+        list-style:none;
+        list-style-image:url(list-item-image.jpg);
+        list-style-position:outside;
+        margin: left: 20px;;
+      }
+      h1 div li
+      {
+        list-style:none;
+        list-style-image:url(list-item-ul.png);
+        list-style-position:inside;
+        display: inline;
+        list-style-type: none;
+        padding-left: 20px;
+      }
+      div .t
+      {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.973);
+        font-size: 18px;
+        border-radius: 1px solid rgba(255, 255, 255, 0.973);
+      }
+      div .t:hover
+      {
+        font-size: 21px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 107, 39);
+        border: 8px solid rgb(255, 107, 39);
+        transition: ease-in-out;
+        border-radius:20px;
+      }
+      .button
+      {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin-left: 14%;
+            font-size: 20px;
+            background-color: rgb(255, 107, 39);
+            border: 8px solid rgb(255, 107, 39);
+            transition: ease-in-out;
+            border-radius:15px;
+      }
+      .button1
+      {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.973);
+            font-size: 25px;
+            background-color: rgb(106, 73, 255);
+            border: 8px solid rgb(106, 73, 255);
+            transition: ease-in-out;
+            border-radius:15px;
+      }
+      .button:hover
+      {
+            background-color: rgb(78, 77, 77);
+            border: 8px solid rgb(78, 77, 77);
+      }
+      .button1:hover
+      {
+            background-color: rgb(93, 93, 94);
+            border: 8px solid rgb(93, 93, 94);
+      }
+      .loginbox
+      {
+          width: 400px;
+          height: 600px;
+          background:rgba(228, 230, 250, 0.63);
+          color: rgba(74, 86, 255, 0.507);
+          top: 50%;
+          left: 75%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          box-sizing: border-box;
+          border-radius: 22px;
+          padding: 70px 30px;
+      }
+      .avatar
+      {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: -10%;
+          left: calc(100% - 63%);
+      }
+      .loginbox p
+      {
+          margin: 0px;
+          padding: 0px 0px 0px 0px;
+          color: rgb(69, 93, 255);
+          font-size: 22px;
+          font-weight: bold;
+      }
+      .loginbox h1
+      {
+          color: black;
+          font-size: 30px;
+          margin: 22px;
+          padding: 0 0 20px;
+          text-align: center;
+          font-weight: bold;
+      }
+      .loginbox input
+      {
+          margin: 10%;
+          margin-bottom: 10px;
+          background: rgb(76, 70, 255);
+          bord
+      }
+      .loginbox input[type="text"], input[type="password"]
+      {
+          border: none;
+          border-bottom: 1px solid rgb(76, 70, 255);
+          background: transparent;
+          outline: none;
+          height: 40px;
+          padding: 10px 0px 0px 30px;
+          font-size:20px
+      }
+      .loginbox input[type="button"]
+      {
+          border: none;
+          outline: none;
+          height: 40px;
+          background: rgb(76, 70, 255);
+          color: rgb(255, 255, 255);
+          font-size: 18px;
+          border: 10px solid rgb(76, 70, 255);
+          border-radius: 10px;
+      }
+      .loginbox input[type="button"]:hover
+      {
+        border: none;
+          outline: none;
+          height: 40px;
+          background: rgb(255, 92, 42);
+          color: rgb(255, 255, 255);
+          font-size: 18px;
+          border: 10px solid rgb(255, 92, 42);
+          border-radius: 10px;
+      }
+      .help
+      {
+        margin-left: 20%;
+      }
+      .bg-modal
+      {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+      .modal-content
+      {
+        width: 980px;
+        height: 550px;
+        background: url('https://up.20script.ir/file/56c6-fox.jpg');no-repeat center fixed;
+        background-size:cover;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        overflow: auto;
+      }
+      .close
+      {
+        position: absolute;
+        top: 7px;
+        right: 14px;
+        font-size: 40px;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+      }
+      .bg-modal1
+      {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+      .modal-content1
+      {
+        width: 450px;
+        height: 200px;
+        background-color: rgb(207, 212, 252);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        overflow: auto;
+      }
+      .close1
+      {
+        position: absolute;
+        top: 7px;
+        right: 14px;
+        font-size: 40px;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+      }
+      .p1
+      {
+        font-size: 22px;
+        color: rgb(49, 49, 255);
+      }
+      #d1
+      {
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 20px;
+        overflow: auto;
+      }
+      .e1
+      {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: rgb(255, 92, 42);
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        border: 10px solid rgb(255, 92, 42);
+        border-radius: 10px;
+        margin-top: 7%;
+      }
+      .e1:hover
+      {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: rgb(42, 63, 255);
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        border: 10px solid rgb(42, 63, 255);
+        border-radius: 10px;
+        overflow: auto;
+      }
+      #d2
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 1%;
+        overflow: auto;
+      }
+      #d3
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 1%;
+        overflow: auto;
+      }
+      #d4
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 3%;
+        margin-top: 20px;
+        overflow: auto;
+      }
+      #d5
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 1%;
+        margin-top: 20px;
+        overflow: auto;
+      }
+      #d6
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 1%;
+        margin-top: 20px;
+        overflow: auto;
+      }
+      #d7
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgba(255, 255, 255, 0.53);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 3%;
+        margin-top: 20px;
+        overflow: auto;
+        
+      }
+      #d8
+      {
+        text-align: center;
+        position: static;
+        margin: auto;
+        width: 290px;
+        height: 375px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        position: static;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 1%;
+        margin-top: 20px;
+        overflow: auto;
+        
+      }
+      #Me
+      {
+        width: 290px;
+        height: 375px;
+      }
+        </style> 
+    </head>
+    <body>
+    <div class="loginbox">
+        <h1>Login</h1>
+        <form>
+            <p>User Name</p>
+            <input type="text" id="User" name="User" placeholder="         Enter admin">
+            <p>Password</p>
+            <input type="password" name="" id="pass" value="admin" placeholder="         Enter admin">
+            <br/>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            <input type="button" name="" id='but' value="Get Started" onclick="main()">
+            <br/>
+            &nbsp&nbsp&nbsp&nbsp<a class='help' id='error2' href="#">Do You Have a Problem?</a><br/>
+            <br/>
+        </form>
+    </div>
+    <div class='bg-modal container'>
+      <div class='modal-content container'>
+        <div class='close container' id='close'><img src="https://svgsilh.com/svg/155491.svg" class="close"></div>
+        <h1>Welcome Services EPass</h1>
+
+          <div id='d1' class="d container">
+            <h1 style="font-size: 26px;">Character analyss</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">Guess people's passwords using their personality traits To use this section, you must have sufficient knowledge of your target Personality characteristics</p>
+            <a href="Pages EPass/pass-a.html" id='e1' class='e1'><input type="submit" name="" class='e1' value="Browse"></a>
+          </div>
+          
+          <div id='d2' class='d container'>
+            <h1 style="font-size: 26px;">Random Character analyss</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">In this type of character analysis, numbers also play a role by chance In fact, this is the same type of personality analysis, but in a way that is lucky</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download"></a>
+          </div>
+
+          <div id='d3' class="d container">
+            <h1 style="font-size: 26px;">Numerical pattern</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">It uses a pre-defined template and you place them in front of the target name It is better to get the type of target name in your own articles</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 1.0"></a>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 2.0"></a>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 3.0"></a>
+          </div>
+
+          <div id='d4' class="d container">
+            <h1 style="font-size: 26px;">Random numbers pattern</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">This is how a random pattern is made from 0 to 99999999 numbers And mostly used for completely numeric codes</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download"></a>
+          </div>
+
+          <div id='d5' class="d container">
+            <h1 style="font-size: 26px;">Numbers named Target</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">This pattern puts people's names next to random numbers and sorts them In this pattern, the numbers start from 0 and continue to 999999</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Browse"></a>
+          </div>
+
+          <div id='d6' class="d container">
+            <h1 style="font-size: 26px;">Random numbers in the profile</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">This algorithm puts the numbers next to the entered information and tries to do this as randomly as possible, but until the entered information is complete.</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Browse"></a>
+          </div>
+
+          <div id='d7' class="d container">
+            <h1 style="font-size: 26px;">Default password list</h1>
+            <p style="font-size: 23px; color: rgb(67, 67, 255); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">A default list password that does not need to enter information and is very strong. To run it, just click on the run option and copy the password list in a text file.</p>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 1.0"></a>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 2.0"></a>
+            <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 3.0"></a>
+          </div>
+
+          <div id='d8' class="container">
+            <img id='Me' src="Pages EPass\Config image\Me.jpg" class="Me">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class='bg-modal1 container'>
+      <div class='modal-content1 container'>
+        <div class='close1 container' id='close1'><img src="https://svgsilh.com/svg/155491.svg" class="close1"></div>
+        <h1>Warning Error For Login</h1>
+        <p class='p1'>Error: Information is problematic If you do not have an account you can use the default account Enter the admin username and password to use</p>
+      </div>
+    </div>
+    <script>
+      function main() {
+        var username = document.getElementById('User').value
+        var password = document.getElementById('pass').value
+        if(password == 'admin'){
+            document.getElementById('but').addEventListener('click', 
+            function() {
+              document.querySelector('.bg-modal').style.display = 'flex';
+            });
+
+            document.getElementById('close').addEventListener('click', 
+            function() {
+              document.querySelector('.bg-modal').style.display = 'none';
+            });
+        }
+        else{
+          alert('Error: Information is problematic If you do not have an account you can use the default account Enter the admin username and password to use')
+        }
+      }  
+      document.getElementById('error2').addEventListener('click', 
+      function() {
+        document.querySelector('.bg-modal1').style.display = 'flex';
+      });
+
+      document.getElementById('close1').addEventListener('click', 
+      function() {
+        document.querySelector('.bg-modal1').style.display = 'none';
+      });
+    </script> 
+
+    <script src="Pages EPass/bootstrap.min.js"></script>
+    <script src="Pages EPass/npm.js"></script>
+    </body>    
+</html>
