@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>Character analyss</title>
+          <link href="bootstrap.min.css" rel="stylesheet"/>
+          <link href="bootstrap-theme.css" rel="stylesheet"/>
+          <meta></meta>
+          <style>
+               html
+               {
+                    background-image: url('Config image/a.jpg');no-repeat center fixed;
+                    background-size:cover;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: 100%;
+               }
+               body
+               {
+                    margin: 0px;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    color: rgb(255, 255, 255); 
+               }
+               .left, .right {
+                    float: left;
+                    width: 20%; /* The width is 20%, by default */
+               }
+
+               .main {
+                    float: left;
+                    width: 60%; /* The width is 60%, by default */
+               }
+
+               /* Use a media query to add a breakpoint at 800px: */
+               @media screen and (max-width: 800px) {
+                 .left, .main, .right {
+                    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                 }
+               }
+               .loginbox
+               {
+                 width: 450px;
+                 height: 660px;
+                 background:rgba(216, 226, 243, 0.761);
+                 color: rgba(74, 86, 255, 0.507);
+                 top: 50%;
+                 left: 72%;
+                 position: absolute;
+                 transform: translate(-50%,-50%);
+                 box-sizing: border-box;
+                 border-radius: 22px;
+                 padding: 70px 30px;
+                 overflow: auto;
+               }
+               .loginbox p
+               {
+                    margin: 0px;
+                    padding: 0px 0px 0px 0px;
+                    color: rgb(84, 78, 251);
+                    font-size: 22px;
+                    font-weight: bold;
+               }
+               .loginbox h1
+               {
+                    color: black;
+                    font-size: 30px;
+                    margin: 0px;
+                    padding: 0 0 40px;
+                    text-align: center;
+                    font-weight: bold;
+               }
+               .loginbox input
+               {
+                    margin: 10%;
+                    margin-bottom: 10px;
+                    background: rgb(70, 64, 246);
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    margin-left: 20%;
+               }
+               .loginbox input[type="text"], input[type="password"]
+               {
+                    border: none;
+                    border-bottom: 1px solid rgb(84, 78, 251);
+                    background: transparent;
+                    outline: none;
+                    height: 40px;
+                    padding: 10px 0px 0px 30px;
+                    font-size:20px
+               }
+               .loginbox input[type="submit"]
+               {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(255, 92, 42);
+                    color: rgb(255, 255, 255);
+                    font-size: 18px;
+                    border: 10px solid rgb(255, 92, 42);
+                    border-radius: 10px;
+               }
+               .loginbox input[type="submit"]:hover
+               {
+               border: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(42, 63, 255);
+                    color: rgb(255, 255, 255);
+                    font-size: 20px;
+                    border: 10px solid rgb(42, 63, 255);
+                    border-radius: 10px;
+               }
+               .loginbox input[type="button"]
+               {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(45, 63, 255);
+                    color: rgb(255, 255, 255);
+                    font-size: 18px;
+                    border: 10px solid rgb(45, 63, 255);
+                    border-radius: 10px;
+                    margin-left: 45;
+                    margin-top: auto;
+               }
+               .loginbox input[type="button"]:hover
+               {
+               border: none;
+                    outline: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(188, 53, 251);
+                    color: rgb(255, 255, 255);
+                    font-size: 20px;
+                    border: 10px solid rgb(188, 53, 251);
+                    border-radius: 10px;
+               }
+               .help
+               {
+               margin-left: 25%;
+               }
+               .bg-modal
+               {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    position: absolute;
+                    top: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    display: none;
+               }
+               .modal-content
+               {
+                    width: 950px;
+                    height: 550px;
+                    background-image: url('https://up.20script.ir/file/56c6-fox.jpg');
+                    border-radius: 10px;
+                    color: rgb(255, 255, 255);
+                    text-align: center;
+                    padding: 20px;
+                    position: relative;
+                    overflow: auto;
+               }
+               .close
+               {
+                    position: absolute;
+                    top: 7px;
+                    right: 14px;
+                    font-size: 40px;
+                    cursor: pointer;
+                    width: 35px;
+                    height: 35px;
+               }
+               .file
+               {
+                    
+                    width: 400px;
+                    height: 415px;
+                    background: rgba(215, 218, 253, 0.809);
+                    border-radius: 10px;
+                    color: rgb(0, 0, 0);
+                    text-align: center;
+                    padding: 20px;
+                    position: relative;
+                    overflow: auto;
+                    margin-left: 5%;
+                    overflow: auto;
+                    float: left;
+               }
+               .bg-modal1
+               {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    position: absolute;
+                    top: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    display: none;
+               }
+               .modal-content1
+               {
+                    width: 450px;
+                    height: 200px;
+                    background-color: rgb(207, 212, 252);
+                    border-radius: 10px;
+                    color: black;
+                    text-align: center;
+                    padding: 20px;
+                    position: relative;
+                    overflow: auto;
+               }
+               .close1
+               {
+                    position: absolute;
+                    top: 7px;
+                    right: 14px;
+                    font-size: 40px;
+                    cursor: pointer;
+                    width: 35px;
+                    height: 35px;
+               }
+               .p1
+               {
+               font-size: 22px;
+               color: rgb(49, 49, 255);
+               }
+               .text
+               {
+                    margin-right: 85%;
+                    color: rgb(83, 41, 251);
+                    text-align: left;
+               }
+               .pre
+               {
+                    text-align: center;
+                    position: static;
+                    margin: auto;
+                    width: 350px;
+                    height: 450px;
+                    background-image: url('https://cdn.pixabay.com/photo/2016/03/27/22/22/fox-1284512_1280g');
+                    border-radius: 10px;
+                    color: rgb(255, 255, 255);
+                    text-align: center;
+                    padding: 20px;
+                    position: static;
+                    box-sizing: border-box;
+                    float: left;
+                    margin-left: 10%;
+                    overflow: auto;
+               }
+               .e1
+               {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(255, 92, 42);
+                    color: rgb(255, 255, 255);
+                    font-size: 18px;
+                    border: 10px solid rgb(255, 92, 42);
+                    border-radius: 10px;
+                    margin-top: 7%;
+               }
+               .e1:hover
+               {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: rgb(42, 63, 255);
+                    color: rgb(255, 255, 255);
+                    font-size: 18px;
+                    border: 10px solid rgb(42, 63, 255);
+                    border-radius: 10px;
+                    overflow: auto;
+               }
+          </style>
+          <script>
+               function main() {
+                    document.getElementById('error2').addEventListener('click', 
+                    function() {
+                    document.querySelector('.bg-modal1').style.display = 'flex';
+                    });
+
+                    document.getElementById('close1').addEventListener('click', 
+                    function() {
+                    document.querySelector('.bg-modal1').style.display = 'none';
+                    });
+               }
+
+
+               function pass() {
+
+                    document.getElementById('sub').addEventListener('click', 
+                    function() {
+                      document.querySelector('.bg-modal').style.display = 'flex';
+                    });
+
+                    document.getElementById('close').addEventListener('click', 
+                    function() {
+                      document.querySelector('.bg-modal').style.display = 'none';
+                    });
+
+                    var fname = document.getElementById("p1").value
+                    var lname = document.getElementById("p2").value
+                    var birth = document.getElementById("p3").value
+                    var mather = document.getElementById("p4").value
+                    var father = document.getElementById("p5").value
+                    var car = document.getElementById("p6").value
+                    var obj = document.getElementById("p7").value
+                    var dog = document.getElementById("p8").value
+                    var job = document.getElementById("p9").value
+                    
+
+                    document.querySelector('#t1').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t2').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t3').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t4').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t5').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t6').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t7').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t8').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t9').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t10').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t11').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t12').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t13').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t14').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t15').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t16').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t17').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t18').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t19').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t20').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t21').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t22').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t23').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde'+'\n'+'sasabdsbga'+'\n'+'ari\nadfd'+'\n'+'stehen\n oder \ndafür, dass\n das Ziel \nauf eine \nungewöhnliche \nWeise \nerreicht\n wird.[2] \nSpeziell\n im Bereich \nder Computersicherheit\n giltv\n ein System\n als gehackt\n, \nwenn \nIn \neiner \nanderen\n Bedeutung \nkann\n ein\n Hac\nk eine\n Art\n \nWorkaround\n sein\n. Al\ns eine\n rasch\n erstellte\n, „unschöne\n“ und\n ungeschliffene\n Anpassung\n \n(quick-and-d\nirty hack) steht \ndas Wort\n dann \neh\ner f\n\nür n den \nspäten 1950er \nJahren wurde ‚\nhacking’ \nauch \nvom \nModelleisenbahnclub \ndes \nMIT \n(Massachusetts \nInstitute o\nf Tec\nhnology), \ngenauer \ndem \nTMRC (\nTech \nModel R\nailroad \nClub \nof MIT), \nverwendet, \nwelcher \nebenfalls \nBezug zur \nAnpassung \nihrer \nelektronischen \nund \nmechanischen G\neräte nahm.[13] \nDas Wort ‚H\nack’ \nstand \nzunächst i\nm \nKontext \nvon t\nechnikbasier\nten Strei\nchen oder en\ntsprach e\ninem W\nort für be\nsonders g\neschickte o\nder g\n\n\newagte Ta\n\nten. Dabei \nschwang\n eine Ko\nnn\notation vo\nn Harm\nlosigk\neit mit (im S\n\ninne von \n\n„nicht\n\n destr\nuktiv“), von \nkreativem S\n\npaß.[15\n] Hatte\n ein St\nudent d\nes \nMIT \neinen \nraffin\nierten Streic\nh ausge\nheckt, \n\ngalt der \nÜbeltäte\nr als Hac\nker.[2] Der\n Gebrauch\n des Wortes\n ‚Hack’\n vers\nchob si\nch zur Techn\nik, \ndie benötigt wi\nrd, um den\n Strei\nch aus\nzuführen \nund wur\nde spä\nter für\n eine \nschlau\ne techn\nische Lö\nsung im \nAllgemeinen \nverwendet, o\nhne \nsich \ndabei \nunbedingt \nauf \neinen \nStreich \nzu \nbeziehen \nund \nohne \ndies \nauf \nden C\nomputer \nzu \nbeschränken.\n[16eine ';
+                    document.querySelector('#t24').innerText = fname+lname+'\n'+fname+birth+'\n'+lname+birth+'\n'+birth+lname+'\n'+birth+fname+'\n'+mather+'\n'+father+'\n'+car+dog+'\n'+dog+job+'\n'+fname+job+'\n'+birth+job+'\n'+mather+birth+'\n'+birth+birth+'\n'+birth+car+dog+'\n'+dog+birth+'\n'+dog+'\n'+dog+mather+'\n'+dog+job+'\n'+job+birth+'\n'+obj+birth+'\n'+lname+birth+'\n'+obj+birth+'\n'+'michelle'+'\n'+'flowerr'+'\n'+'egwegodfk'+'\n'+'classtefr'+'\n'+'useradmin'+'\n'+'adminuser'+'\n'+'falower'+'\n'+'adminadmin'+'\n'+'root'+'\n'+'rootroot'+'\n'+'clasert'+'\n'+'flawer'+'\n'+'ingenner'+'\n'+'123456'+'\n'+'0435383957'+'\n'+'78549516'+'\n'+'5484258'+'\n'+'admin'+birth+'\n'+'user'+birth+'\n'+'admin'+dog+'\n'+'545dfwefg'+'\n'+'gehwiejghwejg'+'\n'+'hyrdgkf'+'\n'+'hfndirwdv'+'\n'+'birde';
+                    
+
+               }
+          </script>
+     </head>
+     <body>
+          <div class="loginbox container">
+               <h1>Character analyss<br/>Target specifications</h1>
+               <form>
+                   <p>Firstname</p>
+                   <input type="text" id="p1" name="User" placeholder="     Enter Firstname">
+                   <p>Lastname</p>
+                   <input type="text" name="" id="p2" placeholder="     Enter Lastname">
+                   <p>Date of birth</p>
+                   <input type="text" name="" id="p3" placeholder="   Enter Date of birth">
+                   <p>Mather Name</p>
+                   <input type="text" name="" id="p4" placeholder=" Enter Mather Name">
+                   <p>Father Name</p>
+                   <input type="text" name="" id="p5" placeholder="   Enter Father Name">
+                   <p>Favorite car</p>
+                   <input type="text" name="" id="p6" placeholder="    Enter Favorite car">
+                   <p>Favorite Object</p>
+                   <input type="text" name="" id="p7" placeholder="Enter Favorite Object">
+                   <p>Dog Name</p>
+                   <input type="text" name="" id="p8" placeholder="     Enter Dog Name">
+                   <p>Job</p>
+                   <input type="text" name="" id="p9" placeholder="           Enter Job">
+                   <br/>
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   &nbsp
+                   <input type="button" name="" id='sub' value="Create" onclick="pass()">
+                   <br/>
+                   &nbsp&nbsp&nbsp&nbsp<a class='help' id='error2' href="#" onclick="main()">Do You Have a Problem?</a><br/>
+                   <br/>
+               </form>
+           </div>
+
+
+
+           <div class='bg-modal container'>
+               <div class='modal-content container'>
+                 <div class='close container' id='close'><img src="https://svgsilh.com/svg/155491.svg" class="close"></div>
+                 <h1>Character analyss.txt</h1>
+                 <div class='file'>
+                      <p id='t1' class="text">password lists</p>
+                      <p id='t2' class="text">password lists</p>
+                      <p id='t3' class="text">password lists</p>
+                      <p id='t4' class="text">password lists</p>
+                      <p id='t5' class="text">password lists</p>
+                      <p id='t6' class="text">password lists</p>
+                      <p id='t7' class="text">password lists</p>
+                      <p id='t8' class="text">password lists</p>
+                      <p id='t9' class="text">password lists</p>
+                      <p id='t10' class="text">password lists</p>
+                      <p id='t11' class="text">password lists</p>
+                      <p id='t12' class="text">password lists</p>
+                      <p id='t13' class="text">password lists</p>
+                      <p id='t14' class="text">password lists</p>
+                      <p id='t15' class="text">password lists</p> 
+                      <p id='t16' class="text">password lists</p>
+                      <p id='t17' class="text">password lists</p>
+                      <p id='t18' class="text">password lists</p>
+                      <p id='t19' class="text">password lists</p>
+                      <p id='t20' class="text">password lists</p>
+                      <p id='t21' class="text">password lists</p>
+                      <p id='t22' class="text">password lists</p>
+                      <p id='t23' class="text">password lists</p>
+                      <p id='t24' class="text">password lists</p>
+
+                 </div>
+
+                 <div class='pre container'>
+                    <h1 style="font-size: 26px;">Default password list</h1>
+                    <p style="font-size: 23px; color: rgb(233, 233, 233); text-align: left; text-decoration: none; margin: 0px; text-decoration: none;">A default list password that does not need to enter information and is very strong. To run it, just click on the run option and copy the password list in a text file.</p>
+                    <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 1.0"></a>
+                    <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 2.0"></a>
+                    <a href="https://codeload.github.com/danielmiessler/SecLists/zip/master" id='e1' class='e1'><input type="submit" name="" class='e1' value="Download 3.0"></a>
+                 </div>
+               </div>
+               </div>
+             </div>
+
+
+             <div class='bg-modal1 container'>
+               <div class='modal-content1'>
+                 <div class='close1' id='close1'><img src="https://svgsilh.com/svg/155491.svg" class="close1"></div>
+                 <h1>Warning Character analyss</h1>
+                 <p class='p1'>To create a password list, you must fill in the required information on your target to analyze your input information and create a password list.</p>
+               </div>
+             </div>
+
+
+          <script src="Pages EPass/bootstrap.min.js"></script>
+          <script src="Pages EPass/npm.js"></script>
+     </body>
+</html>
